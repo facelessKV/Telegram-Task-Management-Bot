@@ -1,181 +1,203 @@
-# Инструкция по установке и запуску бота-планировщика задач
+✅ Telegram Task Management Bot
 
-Данная инструкция поможет вам установить и запустить телеграм-бота для управления задачами даже если вы новичок в программировании. Инструкция составлена для операционных систем Windows и Linux.
+Need to stay on top of your tasks and boost productivity? This bot helps you manage tasks efficiently, set deadlines, and track progress—all within Telegram!
+With this bot, you can organize your workflow, assign tasks, and receive timely reminders to stay productive.
 
-## Содержание
-1. [Установка Python](#1-установка-python)
-2. [Создание бота в Telegram](#2-создание-бота-в-telegram)
-3. [Установка необходимых библиотек](#3-установка-необходимых-библиотек)
-4. [Настройка и запуск бота](#4-настройка-и-запуск-бота)
-5. [Использование бота](#5-использование-бота)
+✅ What does it do?
 
-## 1. Установка Python
+ • 📌 Allows you to create, update, and complete tasks
+ • ⏳ Sets deadlines and sends reminders
+ • 📊 Tracks progress and organizes tasks by priority
+ • 🔄 Assigns tasks to team members (if needed)
 
-### Для Windows:
+🔧 Features
 
-1. Скачайте Python 3.10 с официального сайта: https://www.python.org/downloads/release/python-31012/
-   Выберите версию "Windows installer (64-bit)" если у вас 64-битная система.
+✅ Simple and intuitive task management system
+✅ Automated reminders to keep you on schedule
+✅ Task delegation for better team collaboration
 
-2. Запустите скачанный установщик и **обязательно отметьте галочку "Add Python 3.10 to PATH"** в нижней части окна установщика.
+📩 Want to streamline your task management?
 
-3. Нажмите "Install Now" и дождитесь завершения установки.
+Contact me on Telegram, and I’ll help you set up this bot to boost your productivity! 🚀
 
-4. Чтобы проверить, что Python установлен правильно:
-   - Откройте командную строку (нажмите Win+R, введите "cmd" и нажмите Enter)
-   - Введите команду: `python --version`
-   - Вы должны увидеть версию Python (например, "Python 3.10.12")
+# Instructions for installing and launching the task scheduler bot
 
-### Для Linux:
+This guide will help you install and run a telegram bot for managing tasks, even if you are new to programming. The instructions are compiled for Windows and Linux operating systems.
 
-1. Откройте терминал (обычно можно нажать Ctrl+Alt+T).
+## Content
+1. [Python Installation](#1-installation-python)
+2. [Creating a bot in Telegram] (#2-creating-a-bot-in-telegram)
+3. [Installing Necessary Libraries](#3-installing-necessary-libraries)
+4. [Setting up and launching the bot] (#4-setting up and launching the bot)
+5. [Using a Bot] (#5-using a bot)
 
-2. Установите Python 3.10 с помощью менеджера пакетов:
+## 1. Installing Python
 
-   **Для Ubuntu/Debian:**
+### For Windows:
+
+1. Download Python 3.10 from the official website: https://www.python.org/downloads/release/python-31012/
+   Select the "Windows installer (64-bit)" version if you have a 64-bit system.
+
+2. Run the downloaded installer and **make sure to check the box "Add Python 3.10 to PATH"** at the bottom of the installer window.
+
+3. Click "Install Now" and wait for the installation to complete.
+
+4. To check that Python is installed correctly:
+- Open the command prompt (press Win+R, type "cmd" and press Enter)
+   - Enter the command: `python --version`
+   - You should see the Python version (for example, "Python 3.10.12")
+
+### For Linux:
+
+1. Open a terminal (you can usually press Ctrl+Alt+T).
+
+2. Install Python 3.10 using the package manager:
+
+   **For Ubuntu/Debian:**
    ```
    sudo apt update
    sudo apt install python3.10 python3-pip
    ```
 
-   **Для Fedora:**
-   ```
+   **For Fedora:**
+``
    sudo dnf install python3.10 python3-pip
    ```
 
-3. Проверьте установку:
-   ```
+3. Check the installation:
+``
    python3 --version
    ```
 
-## 2. Создание бота в Telegram
+## 2. Creating a bot in Telegram
 
-1. Откройте Telegram и найдите бота @BotFather (это официальный бот Telegram для создания ботов).
+1. Open Telegram and find the bot @BotFather (this is the official Telegram bot for creating bots).
 
-2. Напишите боту команду `/newbot`
+2. Write the command `/newbot` to the bot
 
-3. Следуйте инструкциям BotFather:
-   - Укажите имя для вашего бота (например, "Мой Планировщик Задач")
-   - Укажите username для бота (должен заканчиваться на "bot", например, "MyTaskPlannerBot")
+3. Follow the instructions of the BotFather:
+   - Specify a name for your bot (for example, "My Task Scheduler")
+- Specify the username for the bot (must end with "bot", for example, "MyTaskPlannerBot")
 
-4. BotFather выдаст вам токен для API бота. Он выглядит примерно так: `1234567890:AAHfiqksKZ8WmR2zSjiQ7_0dps1sdLa4gNs`
+4. BotFather will give you a token for the bot API. It looks something like this: `1234567890:AAHfiqksKZ8WmR2zSjiQ7_0dps1sdLa4gNs`
 
-5. **Важно!** Сохраните этот токен в надежном месте — он понадобится для настройки бота.
+5. **Important!** Save this token in a safe place — you will need it to set up the bot.
 
-## 3. Установка необходимых библиотек
+## 3. Installing the necessary libraries
 
-### Для Windows:
+### For Windows:
 
-1. Откройте командную строку от имени администратора:
-   - Нажмите Win+R
-   - Введите "cmd"
-   - Нажмите Ctrl+Shift+Enter
+1. Open the command prompt as an administrator:
+   - Press Win+R
+- Type "cmd"
+   - Press Ctrl+Shift+Enter
 
-2. Установите библиотеку aiogram:
+2. Install the aiogram library:
    ```
    pip install aiogram>=3.0.0
    ```
 
-### Для Linux:
+### For Linux:
 
-1. Откройте терминал и выполните:
+1. Open a terminal and run:
    ```
    pip3 install aiogram>=3.0.0
    ```
 
-## 4. Настройка и запуск бота
+##4. Setting up and launching the bot
 
-### Для Windows:
+### For Windows:
 
-1. Создайте новую папку на рабочем столе (например, "my_task_bot").
+1. Create a new folder on the desktop (for example, "my_task_bot").
 
-2. Скопируйте файлы `database.py` и `main.py` в эту папку.
+2. Copy the files `database.py `and `main.py `to this folder.
 
-3. Откройте файл `main.py` с помощью Блокнота:
-   - Щелкните правой кнопкой мыши по файлу
-   - Выберите "Открыть с помощью" -> "Блокнот"
+3. Open the file `main.py ` using a Notepad:
+   - Right-click on the file
+   - Select "Open with" -> "Notepad"
 
-4. Найдите строку `API_TOKEN = 'YOUR_BOT_TOKEN'` (примерно 16-я строка).
+4. Find the string `API_TOKEN = 'YOUR_BOT_TOKEN' (approximately the 16th line).
 
-5. Замените 'YOUR_BOT_TOKEN' на токен, который вы получили от BotFather (вместе с кавычками).
+5. Replace 'YOUR_BOT_TOKEN' with the token you received from BotFather (along with the quotes).
 
-6. Сохраните файл (Ctrl+S) и закройте Блокнот.
+6. Save the file (Ctrl+S) and close Notepad.
 
-7. Запуск бота:
-   - Откройте командную строку
-   - Перейдите в папку с ботом, например:
+7. Launching the bot:
+   - Open the command prompt
+   - Go to the bot folder, for example:
      ```
-     cd C:\Users\ИМЯ_ПОЛЬЗОВАТЕЛЯ\Desktop\my_task_bot
-     ```
-   - Запустите бота командой:
-     ```
+     cd C:\Users\USER_NAME\Desktop\my_task_bot
+     ``
+- Launch the bot with the command:
+``
      python main.py
      ```
 
-### Для Linux:
+### For Linux:
 
-1. Создайте новую папку для бота:
+1. Create a new folder for the bot:
    ```
    mkdir ~/my_task_bot
    cd ~/my_task_bot
    ```
 
-2. Скопируйте файлы `database.py` и `main.py` в эту папку.
+2. Copy the files `database.py `and `main.py `to this folder.
 
-3. Отредактируйте файл `main.py`:
-   ```
+3. Edit the file `main.py `:
+``
    nano main.py
    ```
 
-4. Найдите строку `API_TOKEN = 'YOUR_BOT_TOKEN'`
+4. Find the string `API_TOKEN = 'YOUR_BOT_TOKEN'
 
-5. Замените 'YOUR_BOT_TOKEN' на ваш токен от BotFather.
+5. Replace 'YOUR_BOT_TOKEN' with your BotFather token.
 
-6. Сохраните файл (Ctrl+O, затем Enter) и выйдите из редактора (Ctrl+X).
+6. Save the file (Ctrl+O, then Enter) and exit the editor (Ctrl+X).
 
-7. Запустите бота:
+7. Launch the bot:
    ```
    python3 main.py
    ```
 
-## 5. Использование бота
+## 5. Using a bot
 
-1. Откройте Telegram и найдите вашего бота по имени, которое вы указали при создании.
+1. Open Telegram and find your bot by the name you specified when creating it.
 
-2. Нажмите кнопку "Start" или отправьте команду `/start`.
+2. Press the "Start" button or send the `/start` command.
 
-3. Бот ответит приветствием и перечислит доступные команды:
-   - `/add` — добавить новую задачу
-   - `/list` — просмотреть все задачи
-   - `/done` — отметить задачу как выполненную
-   - `/remove` — удалить задачу
+3. The bot will respond with a greeting and list the available commands.:
+   - `/add` — add a new task
+   - `/list` — view all tasks
+- `/done` — mark the task as completed
+   - `/remove` — delete an issue
 
-4. Для добавления задачи:
-   - Отправьте команду `/add`
-   - Бот попросит ввести текст задачи
-   - Отправьте описание вашей задачи
+4. To add a task:
+   - Send the `/add` command
+   - The bot will ask you to enter the text of the task
+- Send a description of your task
 
-5. Для просмотра списка задач:
-   - Отправьте команду `/list`
+5. To view the task list:
+- Send the command `/list`
 
-6. Для отметки задачи как выполненной:
-   - Отправьте команду `/done`
-   - Выберите номер задачи из списка и отправьте его
+6. To mark a task as completed:
+- Send the command `/done`
+   - Select an issue number from the list and send it.
 
-7. Для удаления задачи:
-   - Отправьте команду `/remove`
-   - Выберите номер задачи из списка и отправьте его
+7. To delete an issue:
+   - Send the `/remove` command
+   - Select an issue number from the list and send it.
 
-## Возможные проблемы и их решение
+## Possible problems and their solutions
 
-1. **Ошибка "python не является внутренней или внешней командой"**
-   - Переустановите Python и обязательно отметьте галочку "Add Python to PATH"
+1. **Error "python is not an internal or external command"**
+   - Reinstall Python and make sure to check the box "Add Python to PATH"
 
-2. **Ошибка при установке библиотек**
-   - Попробуйте запустить командную строку от имени администратора
+2. **Error when installing libraries**
+- Try to run the command prompt as an administrator
 
-3. **Бот не отвечает в Telegram**
-   - Убедитесь, что программа запущена и работает (в командной строке должна быть активность)
-   - Проверьте правильность введенного токена
+3. **The bot does not respond in Telegram**
+- Make sure that the program is running and running (there should be activity on the command line)
+- Check the correctness of the entered token
 
-4. **Ошибка доступа к файлу базы данных**
-   - Убедитесь, что у вас есть права на запись в папку с ботом
+4. **Error accessing the database file**
+- Make sure that you have write permissions to the bot folder
